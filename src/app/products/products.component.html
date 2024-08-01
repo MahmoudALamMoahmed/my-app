@@ -1,4 +1,4 @@
-<div class="bg-dark-subtle">
+<!-- <div class="bg-dark-subtle">
 <h2 class="d-flex flex-wrap justify-content-center m-5 p-5">Our Products</h2>
 </div>
 <div class="container d-flex flex-wrap justify-content-center">
@@ -105,6 +105,15 @@
       <p class="card-text">Prossecor : Core i9 G10</p>
       <a href="#" class="btn btn-primary">Add To Cart</a>
     </div>
+  </div>
+</div> -->
+
+<div class="container my-5">
+  <div class="d-flex gy-5 flex-wrap justify-content-center">
+    @for (bl7 of electronics; track bl7._id) {
+      <app-electroniccard [inp]="bl7"></app-electroniccard>
+    }
+   <!--  -->
   </div>
 </div>
 
