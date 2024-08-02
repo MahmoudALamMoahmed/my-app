@@ -2,7 +2,17 @@
 <div class="container my-5">
   <div class="d-flex gy-5 flex-wrap justify-content-center">
     @for (bl7 of electronics; track bl7._id;) {
-      <app-electroniccard [inp]="bl7"></app-electroniccard>
+
+      @if(bl7._id==1){
+        <app-electroniccard [inp]="bl7"></app-electroniccard>
+       <!--  {{electronics[0].image}} -->
+      }@else if(bl7._id==2){
+        <app-electroniccard [inp]="bl7"></app-electroniccard>
+      }@else if(bl7._id==3){
+        <app-electroniccard [inp]="bl7"></app-electroniccard>
+      }@else if(bl7._id==4){
+        <app-electroniccard [inp]="bl7"></app-electroniccard>
+      }
     }
    <!--  -->
   </div>
