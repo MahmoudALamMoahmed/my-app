@@ -1,19 +1,29 @@
-<p>home works!</p>
+<h1 class="mt-5">All Products</h1>
 <div class="container my-5">
   <div class="d-flex gy-5 flex-wrap justify-content-center">
     @for (bl7 of electronics; track bl7._id;) {
 
-      @if(bl7._id==1){
-        <app-electroniccard [inp]="bl7"></app-electroniccard>
-       <!--  {{electronics[0].image}} -->
-      }@else if(bl7._id==2){
-        <app-electroniccard [inp]="bl7"></app-electroniccard>
-      }@else if(bl7._id==3){
-        <app-electroniccard [inp]="bl7"></app-electroniccard>
-      }@else if(bl7._id==4){
-        <app-electroniccard [inp]="bl7"></app-electroniccard>
-      }
+      <div class="item border border-2 border-dark rounded-2 overflow-hidden m-3">
+        <img [src]="bl7.image"   alt="" style="width: 280px;height: 200px;">
+        <hr>
+      <div class="p-3">
+      <h4>{{bl7.title}}</h4>
+      <p>Price : {{bl7.price}} <span class="text-success">$</span> </p>
+      </div>
+
+      </div>
     }
-   <!--  -->
   </div>
+</div>
+
+<h2 class="mt-5">Recomended Products</h2>
+<div class="container my-5">
+<!-- Trigger by timer  -->
+    @defer (on immediate) {
+      <app-recomended></app-recomended>
+    }
+    @loading (minimum 4s) {
+      <h3 class="text-info">Please Wait Dissappear Recomended products</h3>
+    }
+
 </div>
